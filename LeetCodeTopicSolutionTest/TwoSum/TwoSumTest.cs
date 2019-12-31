@@ -13,21 +13,21 @@ namespace LeetCodeTopicSolutionTest.TwoSum
         [Fact]
         public void TwoSumFuncTest()
         {
-            int[] nums = { 2, 7, 11, 15 };
+            int[] array = { 6, 1, 10, 4, 0, 5, 7, 5 };
+            int num = 10;
+            var reslut = twoSum.TwoSumFunc(array, num);
 
-            var aa = twoSum.TwoSumFunc(nums, 9);
-
-            Assert.True(true);
+            Assert.True(reslut.Count == 2);
         }
 
         [Fact]
         public void TwoSumFunc2Test()
         {
-            int[] nums = { 2, 7, 11, 15 };
+            int[] array = { 6, 1, 10, 4, 0, 5, 7, 5 };
+            int num = 10;
+            var result = twoSum.TwoSumFunc2(array, num);
 
-            var aa = twoSum.TwoSumFunc2(nums, 9);
-
-            Assert.True(true);
+            Assert.True(result.Count == 2);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace LeetCodeTopicSolution.TwoSum
             {
                 for (int j = i + 1; j < array.Count(); j++)
                 {
-                    if (array[i] + array[j] == target)
+                    if (array[i] + array[j] == target && array[i] != array[j])
                     {
                         int[] aa = { i, j };
                         result.Add(aa);
@@ -40,7 +40,7 @@ namespace LeetCodeTopicSolution.TwoSum
             List<int[]> result = new List<int[]>();
             for (int i = 0; i < array.Count(); i++)
             {
-                var findIndexs = array.Select((a, index) => new { a, index }).Where(a => a.a == (target - array[i]));
+                var findIndexs = array.Select((value, index) => new { value, index }).Where(t => t.value == (target - array[i]));
                 if (null == findIndexs || findIndexs.Count() <= 0)
                 {
                     continue;
@@ -48,12 +48,12 @@ namespace LeetCodeTopicSolution.TwoSum
 
                 foreach (var item in findIndexs)
                 {
-                    if (i == item.index)
+                    if (i == item.index || array[i] == item.value)
                     {
                         continue;
                     }
 
-                    var exists = result.Any(a => a[0] == item.index && a[1] == i);
+                    var exists = result.Any(t => t[0] == item.index && t[1] == i);
                     if (!exists)
                     {
                         result.Add(new int[] { i, item.index });
