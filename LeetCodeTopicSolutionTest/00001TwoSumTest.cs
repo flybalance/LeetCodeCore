@@ -1,10 +1,11 @@
 ﻿using Xunit;
 
-namespace LeetCodeTopicSolutionTest.TwoSum
+namespace LeetCodeTopicSolutionTest
 {
     public class TwoSumTest
     {
         private LeetCodeTopicSolution.TwoSum.TwoSum twoSum = null;
+
         public TwoSumTest()
         {
             twoSum = new LeetCodeTopicSolution.TwoSum.TwoSum();
